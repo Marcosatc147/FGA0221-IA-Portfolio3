@@ -7,19 +7,19 @@
 			<OUTCOME>Alta</OUTCOME>
 			<OUTCOME>Media</OUTCOME>
 			<OUTCOME>Baixa</OUTCOME>
-			<PROPERTY>position = (119, 297)</PROPERTY>
+			<PROPERTY>position = (353, 265)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Base_Limpeza</NAME>
 			<OUTCOME>S</OUTCOME>
 			<OUTCOME>N</OUTCOME>
-			<PROPERTY>position = (167, 1056)</PROPERTY>
+			<PROPERTY>position = (353, 705)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Disponibilidade_Pecas</NAME>
 			<OUTCOME>Alta</OUTCOME>
 			<OUTCOME>Media</OUTCOME>
-			<PROPERTY>position = (501, 144)</PROPERTY>
+			<PROPERTY>position = (849, 126)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Marca</NAME>
@@ -27,63 +27,63 @@
 			<OUTCOME>Roborock</OUTCOME>
 			<OUTCOME>Dreame</OUTCOME>
 			<OUTCOME>Kabum</OUTCOME>
-			<PROPERTY>position = (129, 142)</PROPERTY>
+			<PROPERTY>position = (353, 125)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Mercado_Cinza</NAME>
 			<OUTCOME>S</OUTCOME>
 			<OUTCOME>N</OUTCOME>
-			<PROPERTY>position = (124, 448)</PROPERTY>
+			<PROPERTY>position = (353, 557)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Navegacao</NAME>
 			<OUTCOME>LDS_LiDAR</OUTCOME>
 			<OUTCOME>Giro_Outro</OUTCOME>
-			<PROPERTY>position = (141, 906)</PROPERTY>
+			<PROPERTY>position = (353, 985)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Qualidade_Limpeza</NAME>
 			<OUTCOME>Exc</OUTCOME>
 			<OUTCOME>Boa</OUTCOME>
 			<OUTCOME>Raz</OUTCOME>
-			<PROPERTY>position = (577, 633)</PROPERTY>
+			<PROPERTY>position = (1362, 711)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Risco_Problema</NAME>
 			<OUTCOME>Alto</OUTCOME>
 			<OUTCOME>Baixo</OUTCOME>
-			<PROPERTY>position = (864, 390)</PROPERTY>
+			<PROPERTY>position = (851, 405)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Satisfacao_Final</NAME>
 			<OUTCOME>Alta</OUTCOME>
 			<OUTCOME>Baixa</OUTCOME>
-			<PROPERTY>position = (1290, 132)</PROPERTY>
+			<PROPERTY>position = (1855, 125)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Satisfacao_PosVenda</NAME>
 			<OUTCOME>Alta</OUTCOME>
 			<OUTCOME>Baixa</OUTCOME>
-			<PROPERTY>position = (865, 141)</PROPERTY>
+			<PROPERTY>position = (1352, 126)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Satisfacao_Uso</NAME>
 			<OUTCOME>Alta</OUTCOME>
 			<OUTCOME>Baixa</OUTCOME>
-			<PROPERTY>position = (1292, 442)</PROPERTY>
+			<PROPERTY>position = (1857, 515)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Tipo_Mop</NAME>
 			<OUTCOME>Normal</OUTCOME>
 			<OUTCOME>Giratorio</OUTCOME>
-			<PROPERTY>position = (131, 757)</PROPERTY>
+			<PROPERTY>position = (351, 846)</PROPERTY>
 		</VARIABLE>
 		<VARIABLE TYPE="nature">
 			<NAME>Valor_Investimento</NAME>
 			<OUTCOME>Alto</OUTCOME>
 			<OUTCOME>Medio</OUTCOME>
 			<OUTCOME>Baixo</OUTCOME>
-			<PROPERTY>position = (129, 601)</PROPERTY>
+			<PROPERTY>position = (351, 406)</PROPERTY>
 		</VARIABLE>
 		<DEFINITION>
 			<FOR>Avaliacao_Loja</FOR>
