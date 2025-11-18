@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3">
+	<NETWORK>
+		<NAME>UNTITLED</NAME>
+		<VARIABLE TYPE="nature">
+			<NAME>Avaliacao_Loja</NAME>
+			<OUTCOME>Alta</OUTCOME>
+			<OUTCOME>Media</OUTCOME>
+			<OUTCOME>Baixa</OUTCOME>
+			<PROPERTY>position = (119, 297)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Base_Limpeza</NAME>
+			<OUTCOME>S</OUTCOME>
+			<OUTCOME>N</OUTCOME>
+			<PROPERTY>position = (167, 1056)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Disponibilidade_Pecas</NAME>
+			<OUTCOME>Alta</OUTCOME>
+			<OUTCOME>Media</OUTCOME>
+			<PROPERTY>position = (501, 144)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Marca</NAME>
+			<OUTCOME>Xiaomi</OUTCOME>
+			<OUTCOME>Roborock</OUTCOME>
+			<OUTCOME>Dreame</OUTCOME>
+			<OUTCOME>Kabum</OUTCOME>
+			<PROPERTY>position = (129, 142)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Mercado_Cinza</NAME>
+			<OUTCOME>S</OUTCOME>
+			<OUTCOME>N</OUTCOME>
+			<PROPERTY>position = (124, 448)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Navegacao</NAME>
+			<OUTCOME>LDS_LiDAR</OUTCOME>
+			<OUTCOME>Giro_Outro</OUTCOME>
+			<PROPERTY>position = (141, 906)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Qualidade_Limpeza</NAME>
+			<OUTCOME>Exc</OUTCOME>
+			<OUTCOME>Boa</OUTCOME>
+			<OUTCOME>Raz</OUTCOME>
+			<PROPERTY>position = (577, 633)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Risco_Problema</NAME>
+			<OUTCOME>Alto</OUTCOME>
+			<OUTCOME>Baixo</OUTCOME>
+			<PROPERTY>position = (864, 390)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Satisfacao_Final</NAME>
+			<OUTCOME>Alta</OUTCOME>
+			<OUTCOME>Baixa</OUTCOME>
+			<PROPERTY>position = (1290, 132)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Satisfacao_PosVenda</NAME>
+			<OUTCOME>Alta</OUTCOME>
+			<OUTCOME>Baixa</OUTCOME>
+			<PROPERTY>position = (865, 141)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Satisfacao_Uso</NAME>
+			<OUTCOME>Alta</OUTCOME>
+			<OUTCOME>Baixa</OUTCOME>
+			<PROPERTY>position = (1292, 442)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Tipo_Mop</NAME>
+			<OUTCOME>Normal</OUTCOME>
+			<OUTCOME>Giratorio</OUTCOME>
+			<PROPERTY>position = (131, 757)</PROPERTY>
+		</VARIABLE>
+		<VARIABLE TYPE="nature">
+			<NAME>Valor_Investimento</NAME>
+			<OUTCOME>Alto</OUTCOME>
+			<OUTCOME>Medio</OUTCOME>
+			<OUTCOME>Baixo</OUTCOME>
+			<PROPERTY>position = (129, 601)</PROPERTY>
+		</VARIABLE>
+		<DEFINITION>
+			<FOR>Avaliacao_Loja</FOR>
+			<TABLE>0.33 0.34 0.33</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Base_Limpeza</FOR>
+			<TABLE>0.5 0.5</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Disponibilidade_Pecas</FOR>
+			<GIVEN>Marca</GIVEN>
+			<TABLE>0.8 0.2 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Marca</FOR>
+			<TABLE>0.25 0.25 0.25 0.25</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Mercado_Cinza</FOR>
+			<TABLE>0.5 0.5</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Navegacao</FOR>
+			<TABLE>0.8 0.2</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Qualidade_Limpeza</FOR>
+			<GIVEN>Navegacao</GIVEN>
+			<GIVEN>Tipo_Mop</GIVEN>
+			<TABLE>0.2 0.6 0.2 0.95 0.04 0.01 0.05 0.25 0.7 0.3 0.5 0.2</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Risco_Problema</FOR>
+			<GIVEN>Valor_Investimento</GIVEN>
+			<GIVEN>Mercado_Cinza</GIVEN>
+			<GIVEN>Avaliacao_Loja</GIVEN>
+			<TABLE>0.5 0.5 0.8 0.2 0.95 0.05 0.1 0.9 0.2 0.8 0.6 0.4 0.4 0.6 0.7 0.3 0.85 0.15 0.05 0.95 0.15 0.85 0.5 0.5 0.3 0.7 0.6 0.4 0.75 0.25 0.05 0.95 0.15 0.85 0.4 0.6</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Satisfacao_Final</FOR>
+			<GIVEN>Satisfacao_Uso</GIVEN>
+			<GIVEN>Satisfacao_PosVenda</GIVEN>
+			<TABLE>0.98 0.02 0.3 0.7 0.6 0.4 0.01 0.99</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Satisfacao_PosVenda</FOR>
+			<GIVEN>Risco_Problema</GIVEN>
+			<GIVEN>Disponibilidade_Pecas</GIVEN>
+			<TABLE>0.3 0.7 0.1 0.9 0.9 0.1 0.7 0.3</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Satisfacao_Uso</FOR>
+			<GIVEN>Qualidade_Limpeza</GIVEN>
+			<GIVEN>Base_Limpeza</GIVEN>
+			<TABLE>0.99 0.01 0.8 0.2 0.9 0.1 0.6 0.4 0.2 0.8 0.1 0.9</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Tipo_Mop</FOR>
+			<TABLE>0.5 0.5</TABLE>
+		</DEFINITION>
+		<DEFINITION>
+			<FOR>Valor_Investimento</FOR>
+			<TABLE>0.33 0.34 0.33</TABLE>
+		</DEFINITION>
+	</NETWORK>
+</BIF>

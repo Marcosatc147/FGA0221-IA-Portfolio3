@@ -1,4 +1,4 @@
-# --- PROJETO 1: REDES BAYESIANAS PARA DECISÃO DE ROBÔ ASPIRADOR (v5 - ) ---
+# --- PROJETO 1: REDES BAYESIANAS PARA DECISÃO DE ROBÔ ASPIRADOR (v1 - ) ---
 # Disciplina: FGA0221 - Inteligência Artificial
 # Tema: Tratando Incerteza
 #
@@ -74,14 +74,14 @@ def criar_modelo_decisao():
         state_names={'Base_Limpeza': ['S', 'N']}
     )
     
-    # NOVO NÓ-RAIZ: Mercado_Cinza (agora é uma escolha/fato de entrada)
+    # NÓ-RAIZ: Mercado_Cinza (agora é uma escolha/fato de entrada)
     cpd_mc = TabularCPD(
         variable='Mercado_Cinza', variable_card=2,
         values=[[0.5], [0.5]], # Assumindo 50% de chance de ser uma compra MC
         state_names={'Mercado_Cinza': ['S', 'N']}
     )
 
-    # NOVO NÓ-RAIZ: Avaliacao_Loja (discretizado)
+    # NÓ-RAIZ: Avaliacao_Loja (discretizado)
     # Alta (>90%), Media (80-90%), Baixa (<80%)
     cpd_loja = TabularCPD(
         variable='Avaliacao_Loja', variable_card=3,
@@ -135,7 +135,7 @@ def criar_modelo_decisao():
     # Lógica da CPT de Risco:
     # (S, Baixa) -> Risco Alto (0.85) - Pior caso (S20+ em loja ruim)
     # (S, Media) -> Risco Alto (0.70) - (S20+ em loja 85%)
-    # (S, Alta)  -> Risco Alto (0.40) - Risco *mitigado* pela loja boa
+    # (S, Alta)  -> Risco Alto (0.40) - Risco mitigado pela loja boa
     # (N, Baixa) -> Risco Alto (0.50) - Venda oficial, mas loja ruim (Kabum/D9)
     # (N, Media) -> Risco Baixo (0.85) - Venda oficial, loja ok (Q7, Q8, D10)
     # (N, Alta)  -> Risco Baixo (0.95) - Melhor caso (S40c em loja 95%)
@@ -273,19 +273,18 @@ def realizar_inferencia(modelo):
     print(resultado_q7)
     # *** FIM DA NOVA CONSULTA ***
     
-    
     print("\n--- Análise das Consultas ---")
     prob_q8 = resultado_q8.values[0]
     prob_s20 = resultado_s20.values[0]
     prob_d10 = resultado_d10.values[0]
     prob_k700 = resultado_k700.values[0]
     prob_s40c = resultado_s40c.values[0]
-    prob_q7 = resultado_q7.values[0] # *** NOVO ***
+    prob_q7 = resultado_q7.values[0]
 
     print(f"Prob. Satisfação Alta (XIAOMI S40c):     {prob_s40c*100:.2f}%")
     print(f"Prob. Satisfação Alta (DREAME D10 Plus):  {prob_d10*100:.2f}%")
     print(f"Prob. Satisfação Alta (Roborock Q8 Max): {prob_q8*100:.2f}%")
-    print(f"Prob. Satisfação Alta (ROBOROCK Q7 L5):  {prob_q7*100:.2f}%") # *** NOVO ***
+    print(f"Prob. Satisfação Alta (ROBOROCK Q7 L5):  {prob_q7*100:.2f}%")
     print(f"Prob. Satisfação Alta (XIAOMI S20+):     {prob_s20*100:.2f}%")
     print(f"Prob. Satisfação Alta (KABUM SMART 700): {prob_k700*100:.2f}%")
     
@@ -296,7 +295,7 @@ def realizar_inferencia(modelo):
         ("DREAME D10 Plus", prob_d10),
         ("KABUM SMART 700", prob_k700),
         ("XIAOMI S40c", prob_s40c),
-        ("ROBOROCK Q7 L5", prob_q7), # *** NOVO ***
+        ("ROBOROCK Q7 L5", prob_q7),
         key=lambda item: item[1]
     )
     print(f"\nDecisão: O modelo {melhor_modelo[0]} oferece a maior probabilidade de satisfação.")
