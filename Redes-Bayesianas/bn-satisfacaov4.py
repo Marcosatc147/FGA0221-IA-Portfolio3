@@ -121,26 +121,30 @@ def criar_modelo_decisao_refatorado():
                      'Tipo_Mop': ['Normal', 'Giratorio']}
     )
     
-    # --- CPT DE RISCO REATORADA (18 COLUNAS) ---
     cpd_risco = TabularCPD(
-        variable='Risco_Problema', variable_card=2,
-        # Ordem da Evidência: Valor_Investimento (3), Mercado_Cinza (2), Avaliacao_Loja (3)
-        # Ordem das Colunas: Valor (lento), MC (meio), Loja (rápido)
-        # [ (A,S,A), (A,S,M), (A,S,B), (A,N,A), (A,N,M), (A,N,B), (M,S,A), (M,S,M), (M,S,B), (M,N,A), (M,N,M), (M,N,B), (B,S,A), (B,S,M), (B,S,B), (B,N,A), (B,N,M), (B,N,B) ]
-        values=[[0.50, 0.80, 0.95, 0.10, 0.20, 0.60, # P(Risco=Alto) | Valor=Alto
-                 0.40, 0.70, 0.85, 0.05, 0.15, 0.50, # P(Risco=Alto) | Valor=Medio
-                 0.30, 0.60, 0.75, 0.05, 0.15, 0.40], # P(Risco=Alto) | Valor=Baixo
-                 
-                [0.50, 0.20, 0.05, 0.90, 0.80, 0.40, # P(Risco=Baixo) | Valor=Alto
-                 0.60, 0.30, 0.15, 0.95, 0.85, 0.50, # P(Risco=Baixo) | Valor=Medio
-                 0.70, 0.40, 0.25, 0.95, 0.85, 0.60]],# P(Risco=Baixo) | Valor=Baixo
-        evidence=['Valor_Investimento', 'Mercado_Cinza', 'Avaliacao_Loja'],
-        evidence_card=[3, 2, 3],
-        state_names={'Risco_Problema': ['Alto', 'Baixo'],
-                     'Valor_Investimento': ['Alto', 'Medio', 'Baixo'],
-                     'Mercado_Cinza': ['S', 'N'],
-                     'Avaliacao_Loja': ['Alta', 'Media', 'Baixa']}
-    )
+    variable='Risco_Problema', variable_card=2,
+
+    values=[
+        [0.85, 0.90, 0.96,   0.20, 0.35, 0.70,   # Valor Alto
+         0.80, 0.86, 0.94,   0.15, 0.30, 0.60,   # Valor Medio
+         0.75, 0.82, 0.92,   0.10, 0.25, 0.55],  # Valor Baixo
+
+        [0.15, 0.10, 0.04,   0.80, 0.65, 0.30,
+         0.20, 0.14, 0.06,   0.85, 0.70, 0.40,
+         0.25, 0.18, 0.08,   0.90, 0.75, 0.45]
+    ],
+
+    evidence=['Valor_Investimento', 'Mercado_Cinza', 'Avaliacao_Loja'],
+    evidence_card=[3, 2, 3],
+
+    state_names={
+        'Risco_Problema': ['Alto', 'Baixo'],
+        'Valor_Investimento': ['Alto', 'Medio', 'Baixo'],
+        'Mercado_Cinza': ['S', 'N'],
+        'Avaliacao_Loja': ['Alta', 'Media', 'Baixa']
+    }
+)
+
 
     # 2.3 CPTs dos Nós de Utilidade (Calibradas)
     cpd_sat_uso = TabularCPD(
