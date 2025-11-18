@@ -294,7 +294,7 @@ def realizar_inferencias_fixas(inferencia):
 def exportar_modelo(modelo, nome_arquivo="modelo_robos_final.bif"):
     """
     Exporta o modelo Bayesiano completo (DAG + CPTs) para um
-    arquivo .xbif (XML), que pode ser aberto por softwares visuais
+    arquivo .bif (XML), que pode ser aberto por softwares visuais
     como o GeNIe.
     """
     print(f"\n" + "="*50)
